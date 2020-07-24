@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>MY QR Code Generator Project</title>
+        <script src="qrcode.min.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <header class="site-headers">
+            <nav>
+                <div class="logo">
+                    <h1><a href="#">Free QR Code Generator</a></h1>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="qrbox" id="qrcode">
+            </div>
+            <textarea name="qr-data" rows="10" cols="5"  id="qr-data">Free QR Code Generator</textarea>
+            <button class="generateBTN" onclick="generateQR()">Generate QR Code
+                Now!</button>
+        </section>
+        <section class="editing">
+            <input type="number" onchange="widthChanged()" class="widthArea" placeholder="Enter Width in pixel" id="widthArea">
+            <input type="number" onchange="heightChanged()" placeholder="Enter Height in Pixel" class="heightArea" id="heightArea">
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
