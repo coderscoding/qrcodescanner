@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>  
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>MY QR Code Generator Project</title>
-   uy
-        <script src="qrcode.min.js"></script>
         <link
             href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
             rel="stylesheet">
+        <link
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+			rel="stylesheet">
     </head>
     <body>
         <header class="site-headers">
@@ -17,32 +18,588 @@
                 <div class="logo">
                     <h1><a href="#">Free QR Code Generator</a></h1>
                 </div>
-                <div class="menu">
-                    <ul>
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
             </nav>
         </header>
-        <section>
-            <div class="qrbox" id="qrcode">
+        
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-md-4 col-lg-4 col-xl-4 col-sm-12 border-right pl-4 pb-5">
+					<div id="sidebar">
+						<div class="p-2 mt-3 bg-info text-white">Basic</div>
+						<form id="paramsForm">
+							<div class="form-group">
+								<label for="">Text</label>
+								<textarea class="form-control" name="text" rows="2">Free QR Code
+									Generator</textarea>
+							</div>
+							<div class="row">
+								<div class="col">
+									<label for="">Size</label>
+									<input type="number" class="form-control" name="width" value="480"
+										step="10" min="240">
+								</div>
+								<div class="col">
+									<label for="">CorrectLevel</label>
+									<select class="custom-select" name="correctLevel">
+										<option selected value="2">QRCode.CorrectLevel.H</option>
+										<option value="3">QRCode.CorrectLevel.Q</option>
+										<option value="0">QRCode.CorrectLevel.M</option>
+										<option value="1">QRCode.CorrectLevel.L</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row">
+
+								<div class="col">
+									<label for="">Dot Scale</label>
+									<input type="range" oninput="$('#dotScaleSpan').html(this.value)"
+										step="0.1" min="0.1" max="1.0" class="custom-range"
+										name="dotScale" value="0.5" />
+									<span id="dotScaleSpan">0.5</span>
+								</div>
+							</div>
+
+							<!-- <div class="form-group">
+								<label for="">CorrectLevel</label>
+								<select class="custom-select" name="correctLevel">
+									<option selected value="2">QRCode.CorrectLevel.H</option>
+									<option value="3">QRCode.CorrectLevel.Q</option>
+									<option value="0">QRCode.CorrectLevel.M</option>
+									<option value="1">QRCode.CorrectLevel.L</option>
+								</select>
+							</div> -->
+							<div class="p-2 mt-3 bg-info text-white">QuietZone</div>
+							<div class="row">
+
+								<div class="col">
+									<div class="col">
+										<label for="">Color</label>
+										<input type="color" class="form-control" name="quietZoneColor"
+											value="#00CED1">
+									</div>
+								</div>
+
+								<div class="col">
+									<label for="">Quiet Zone</label>
+									<input type="number" class="form-control" name="quietZone" value="0"
+										step="5" min="0">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="custom-control custom-switch">
+									<input class="custom-control-input" name="quietZoneColorChk"
+										type="checkbox" value="" id="quietZoneColorCheck1">
+									<label class="custom-control-label" for="quietZoneColorCheck1">Quiet
+										Zone Color Transparent</label>
+								</div>
+							</div>
+
+							<div class="p-2 mt-3 bg-info text-white">Colorful</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">Dark Color</label>
+									<input type="color" class="form-control" name="colorDark"
+										value="#000000">
+								</div>
+								<div class="col">
+									<label for="">Light Color</label>
+									<input type="color" class="form-control" name="colorLight"
+										value="#ffffff">
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="col">
+									<label for="">Position Color Inner</label>
+									<!-- <input type="color" class="form-control" name="PI" value="#000000"> -->
+								</div>
+								<div class="col">
+									<label for="">Position Color Outer</label>
+									<!-- <input type="color" class="form-control" name="PO" value="#000000"> -->
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">Top Left</label>
+									<input type="color" class="form-control" name="PI_TL" value="">
+								</div>
+								<div class="col">
+									<label for="">Top Right</label>
+									<input type="color" class="form-control" name="PI_TR" value="">
+								</div>
+								<div class="col">
+									<label for="">Top Left</label>
+									<input type="color" class="form-control" name="PO_TL" value="">
+								</div>
+								<div class="col">
+									<label for="">Top Right</label>
+									<input type="color" class="form-control" name="PO_TR" value="">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<label for="">Bootom Left</label>
+									<input type="color" class="form-control" name="PI_BL" value="">
+								</div>
+								<div class="col">
+
+								</div>
+								<div class="col">
+									<label for="">Bottom Left</label>
+									<input type="color" class="form-control" name="PO_BL" value="">
+								</div>
+								<div class="col">
+
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">Alignment Color Inner</label>
+									<input type="color" class="form-control" name="AI" value="#000000">
+								</div>
+								<div class="col">
+									<label for="">Alignment Color Outer</label>
+									<input type="color" class="form-control" name="AO" value="#000000">
+								</div>
+							</div>
+
+							<!-- <div class="form-group">
+								<label for="">Timing Color</label>
+								<input type="color" class="form-control" name="timing" value="#000000">
+							</div> -->
+							<div class="row">
+								<div class="col">
+									<label for="">Timing Horizontal Color</label>
+									<input type="color" class="form-control" name="timing_H" value="">
+								</div>
+								<div class="col">
+									<label for="">Timing Vertical Color</label>
+									<input type="color" class="form-control" name="timing_V" value="">
+								</div>
+							</div>
+
+							<div class="p-2 mt-3 bg-info text-white">Logo</div>
+							<div class="form-group">
+								<label for="">Logo</label> <button id="removeLogo" type="button"
+									class="btn btn-link"> Remove Logo</button>
+								<div class="input-group mb-3">
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="logo" name="logo">
+										<label class="custom-file-label" for="logo">Choose file</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="custom-control custom-switch">
+									<input class="custom-control-input" name="logoBackgroundTransparent"
+										type="checkbox" value="" id="logoBackgroundTransparentCheck1">
+									<label class="custom-control-label"
+										for="logoBackgroundTransparentCheck1">Logo Backgroud Transparent</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">Logo Backgroud Color</label>
+									<input type="color" class="form-control" name="logoBackgroundColor"
+										value="#ffffff">
+								</div>
+								<div class="col">
+									<label for="">Logo Size</label>
+									<input type="number" min="1" class="form-control" name="logoWidth"
+										value="" placeholder="Auto">
+								</div>
+
+
+							</div>
+
+							<div class="p-2 mt-3 bg-info text-white">Background Image</div>
+							<div class="form-group">
+								<label for="">BackgroundImage</label> <button id="removeBackgroundImage"
+									type="button" class="btn btn-link"> Remove Background Image</button>
+								<div class="input-group mb-3">
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" id="backgroundImage"
+											name="backgroundImage">
+										<label class="custom-file-label" for="backgroundImage">Choose file</label>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="col">
+									<div class="custom-control custom-switch">
+										<input class="custom-control-input" name="autoColor" type="checkbox"
+											value="" id="autoColorCheck1"><label class="custom-control-label"
+											for="autoColorCheck1">Auto Color</label>
+									</div>
+								</div>
+
+								<div class="col">
+									<label for="">Background Image Alpha</label>
+									<input type="range"
+										oninput="$('#backgroundImageAlphaSpan').html(this.value)" step="0.1"
+										min="0.1" max="1.0" class="custom-range" name="backgroundImageAlpha"
+										value="0.3" />
+									<span id="backgroundImageAlphaSpan">0.3</span>
+								</div>
+
+							</div>
+
+
+							<div class="p-2 mt-3 bg-info text-white">Title</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">Title</label>
+									<input type="text" class="form-control" name="title" value="">
+								</div>
+								<div class="col">
+									<label for="">Font</label>
+									<input type="text" class="form-control" name="titleFont" value="">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">Height</label>
+									<input type="number" class="form-control" name="titleHeight" value="">
+								</div>
+
+								<div class="col">
+									<label for="">Top</label>
+									<input type="number" class="form-control" name="titleTop" value="">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">Color</label>
+									<input type="color" class="form-control" name="titleColor"
+										value="#ffffff">
+								</div>
+								<div class="col">
+									<label for="">Background Color</label>
+									<input type="color" class="form-control" name="titleBackgroundColor"
+										value="#000000">
+								</div>
+							</div>
+
+
+							<div class="p-2 mt-3 bg-info text-white">SubTitle</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">SubTitle</label>
+									<input type="text" class="form-control" name="subTitle" value="">
+								</div>
+								<div class="col">
+									<label for="">Font</label>
+									<input type="text" class="form-control" name="subTitleFont" value="">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<label for="">Top</label>
+									<input type="number" class="form-control" name="subTitleTop" value="">
+								</div>
+
+								<div class="col">
+									<div class="col">
+										<label for="">Color</label>
+										<input type="color" class="form-control" name="subTitleColor"
+											value="#ffffff">
+									</div>
+								</div>
+							</div>
+
+							<br /><br />
+
+						</form>
+
+					</div>
+				</div>
+				<div class="col-md-8 col-lg-8 col-xl-8 col-sm-12 text-center pt-4">
+					<div class="sticky-top" style="padding-bottom: 100px;">
+						<div id="loading" class="spinner-border text-info" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
+						<div class="qr" id="qrcode">
+						</div>
+					</div>
+					<div class="fixed-bottom mb-5 mr-5 pr-5"><button type="button" class="btn
+							btn-danger btn-lg mb-5 mr-5" id="generatorBtn">&raquo; Generator &laquo;</button></div>
+				</div>
+
+			</div>
+        </div>
+        <div class="footer" id="footer">
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+                    <div class="pandt">
+                        <ul>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>                            
+                                <a href="#">Terms of Use</a>
+                            </li>
+
+                        </ul>
+                    </div>
             </div>
-            <textarea name="qr-data" rows="10" cols="5"  id="qr-data">Free QR Code Generator</textarea>
-            <button class="generateBTN" onclick="generateQR()">Generate QR Code
-                Now!</button>
-        </section>
-        <section class="editing">
-            <input type="number" onchange="widthChanged()" class="widthArea" placeholder="Enter Width in pixel" id="widthArea">
-            <input type="number" onchange="heightChanged()" placeholder="Enter Height in Pixel" class="heightArea" id="heightArea">
-        </section>
-        <script src="script.js"></script>
+        </div>
+        <script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+		<script src="qrcode.min.js"
+            type="text/javascript" charset="utf-8"></script>
+
     </body>
 </html>
+<script>
+$(function () {
+    var defaultParams = {
+        width: 256,
+        height: 256,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+
+        quietZone: 0,
+        quietZoneColor: '#00CED1',
+
+        title: "",
+        titleFont: "bold 16px Arial",
+        titleColor: "#000000",
+        titleBackgroundColor: "#ffffff",
+        titleHeight: 0, // Title Height, Include subTitle
+        titleTop: 30, // draws y coordinates. default is 30
+
+        subTitle: "",
+        subTitleFont: "14px Arial",
+        subTitleColor: "#4F4F4F",
+        subTitleTop: 0, // draws y coordinates. default is 50
+
+        logo: "",
+        logoWidth: "",
+        logoHeight: "",
+        logoBackgroundColor: '#ffffff',
+        logoBackgroundTransparent: false,
+
+        // === Posotion Pattern(Eye) Color
+        PO: "#000000", // Global Posotion Outer color. if not set, the defaut is `colorDark`
+        PI: "#000000", // Global Posotion Inner color. if not set, the defaut is `colorDark`
+        PO_TL: "", // Posotion Outer - Top Left 
+        PI_TL: "", // Posotion Inner - Top Left 
+        PO_TR: "", // Posotion Outer - Top Right 
+        PI_TR: "", // Posotion Inner - Top Right 
+        PO_BL: "", // Posotion Outer - Bottom Left 
+        PI_BL: "", // Posotion Inner - Bottom Left 
+
+        // === Alignment Color
+        AO: "#000000", // Alignment Outer. if not set, the defaut is `colorDark`
+        AI: "#000000", // Alignment Inner. if not set, the defaut is `colorDark`
+
+        // === Timing Pattern Color
+        timing: "#000000", // Global Timing color. if not set, the defaut is `colorDark`
+        timing_H: "", // Horizontal timing color
+        timing_V: "", // Vertical timing color
+
+        // ==== Backgroud Image
+        backgroundImage: "", // Background Image
+        backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1. 
+        autoColor: false,
+
+        dotScale: 1.0 // Must be greater than 0, less than or equal to 1. default is 1
+    }
+
+    var params = {};
+
+    $.extend(params, defaultParams, {
+        text: "Free QR Code Generator",
+        width: 320,
+        height: 320,
+
+        colorDark: "#27408B", // Dark color
+        colorLight: "#FFF8DC", // Light color
+
+        dotScale: 0.4,
+
+
+        logo: 'https://user-images.githubusercontent.com/67409491/88452762-ea47da00-ce7e-11ea-8022-43e775726357.png',
+        logoBackgroundColor: '#FFF8DC', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
+        logoBackgroundTransparent: false, // Whether use transparent image, default is false
+
+        backgroundImage: 'https://user-images.githubusercontent.com/67409491/88452710-91784180-ce7e-11ea-95da-fb8d491fcd78.png',
+        backgroundImageAlpha: 0.3,
+        autoColor: true,
+
+        //					PO_TL:'', // Position Outer - Top Left 
+        PI_TL: '#b7d28d', // Position Inner - Top Left 
+        PO_TL: '#e1622f', // Position Inner - Top Left 
+        PO_TR: '#aa5b71', // Position Outer - Top Right 
+        PI_TR: '#c17e61', // Position Inner - Top Right 
+        PO_BL: '#e1622f', // Position Outer - Bottom Left 
+        PI_BL: '#aa5b71', // Position Inner - Bottom Left 
+        PO_BR: '#e1622f', // Position Outer - Bottom Right 
+        PI_BR: '#aa5b71', // Position Inner - Bottom Right 
+
+        timing_H: '#ff6600', // Horizontal timing color
+        timing_V: '#cc0033', // Vertical timing color
+
+        // === Aligment color
+        AI: '#27408B',
+        AO: '#7D26CD',
+
+        onRenderingStart: function () {
+            $('#loading').hide();
+        }
+    })
+
+    // restore form
+    var skipEleName = "#logoBackgroundTransparent#autoColor#logo#backgroundImage#callback#quietZoneColorChk#";
+    for (var eleName in params) {
+        if (skipEleName.indexOf('#' + eleName + '#') == -1) {
+            $('#paramsForm [name="' + eleName + '"]').val(params[eleName])
+        }
+    }
+
+    $('#paramsForm [name="logo"]').val('');
+    $('#paramsForm [name="backgroundImage"]').val('');
+
+    $('#paramsForm [name="logoBackgroundTransparent"]').prop('checked', params.logoBackgroundTransparent);
+    $('#paramsForm [name="quietZoneColorChk"]').prop('checked', params.quietZoneColor);
+    $('#paramsForm [name="autoColor"]').prop('checked', params.autoColor);
+
+    // console.log(params);
+
+    // Init qrcode
+    var myqrcode = new QRCode($("#qrcode")[0], params);
+
+    // Generator
+    function parseParamsToInt(params, names) {
+        for (var i = 0; i < names.length; i++) {
+            if (params[names[i]]) {
+                params[names[i]] = parseInt(params[names[i]]);
+            }
+        }
+    }
+
+    function parseParamsToFloat(params, names) {
+        for (var i = 0; i < names.length; i++) {
+            if (params[names[i]]) {
+                params[names[i]] = parseFloat(params[names[i]]);
+            }
+        }
+    }
+
+    function generatorLogo(qrCallback, newparams) {
+        // Logo Image
+        var logoEleObj = $('#paramsForm [name="logo"]')[0];
+        if (logoEleObj && logoEleObj.value) {
+            var file = logoEleObj.files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            reader.onload = function (e) {
+                newparams.logo = this.result;
+                qrCallback(newparams);
+            }
+        } else {
+            qrCallback(newparams);
+        }
+    }
+
+    function generatorBackgroundImage(logoCallback, qrCallback, newparams) {
+        // Logo Image
+        var backgroundImageEleObj = $('#paramsForm [name="backgroundImage"]')[0];
+        if (backgroundImageEleObj && backgroundImageEleObj.value) {
+            var file = backgroundImageEleObj.files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            reader.onload = function (e) {
+                newparams.backgroundImage = this.result;
+                logoCallback(qrCallback, newparams);
+            }
+        } else {
+            logoCallback(qrCallback, newparams);
+        }
+    }
+
+
+    function generatorQRCode(newparams) {
+        myqrcode = new QRCode($("#qrcode")[0], newparams)
+    }
+
+    function generator(newparams) {
+        generatorBackgroundImage(generatorLogo, generatorQRCode, newparams);
+    }
+
+
+    $('#logo,#backgroundImage').on('change', function () {
+        $(this).next('.custom-file-label').html($(this).val().split('\\').pop());
+    })
+
+
+
+    $('#generatorBtn, #removeLogo, #removeBackgroundImage').on('click', function () {
+
+
+        if (this.id == 'removeLogo') {
+            params.logo = null;
+        } else if (this.id == 'removeBackgroundImage') {
+            params.backgroundImage = null;
+        }
+        myqrcode.clear();
+        $('#loading').show();
+        var formArray = $('#paramsForm').serializeArray();
+        var userParam = {}
+        for (var i = 0; i < formArray.length; i++) {
+            var ele = formArray[i];
+            if (skipEleName.indexOf('#' + ele.name + '#') == -1) {
+                userParam[ele.name] = ele.value;
+            }
+        }
+
+        userParam['logoBackgroundTransparent'] = $('#paramsForm [name="logoBackgroundTransparent"]').prop('checked');
+        userParam['autoColor'] = $('#paramsForm [name="autoColor"]').prop('checked');
+
+        console.log($('#paramsForm [name="quietZoneColorChk"]').prop('checked'));
+        if ($('#paramsForm [name="quietZoneColorChk"]').prop('checked')) {
+            userParam['quietZoneColor'] = 'transparent';
+        }
+        console.log(userParam);
+        userParam.logoHeight = userParam.logoWidth;
+
+        userParam.height = userParam.width;
+        var newparams = {};
+        $.extend(newparams, params, userParam)
+
+        parseParamsToFloat(newparams, ["width", "height", "typeNumber", "correctLevel", "titleHeight", "titleTop", "subTitleTop", "logoWidth", "logoHeight", "backgroundImageAlpha", "dotScale", "quietZone"])
+        // console.info(newparams)
+
+        generator(newparams)
+    })
+})
+</script>
