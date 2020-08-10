@@ -1,0 +1,42 @@
+h1 {
+    line-height: 13px;
+    padding-top: 9px;
+}
+.main h1, h2, p, ul {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.menu {
+    width: 600px;
+    display: block;
+    margin: auto;
+}
+
+.firstP {
+    margin-top: 20px;
+}
+p {
+    margin-top: 7px;
+}
+
+h2 {
+    line-height: 50px;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: currentColor;
+}
+
+a:hover {
+    color: blue;
+    transition: 0.2s color;
+}
+
+.main ul {
+    margin-left: 18px;
+}
