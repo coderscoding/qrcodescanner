@@ -1,13 +1,47 @@
-h1 {
-    line-height: 13px;
-    padding-top: 9px;
+.menu ul li a {
+    color: white;
+    text-decoration: none;
 }
-.main h1, h2, p, ul {
+
+.menu {
+    background-color: black;
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    float: right;
+}
+
+.menu ul li {
+    float: right;
+    padding-left: 1.3rem;
+    padding-right: 1.3em;
+}
+
+.menu ul li a {
+    line-height: 80px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.menu ul li a:hover {
+
+    border-radius: 5px;
+    color: greenyellow;
+    transition: color 0.2s;
+}
+
+.main h2,
+p,
+ul {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 9px;
     padding-bottom: 9px;
 }
+
 
 .menu {
     width: 600px;
@@ -18,6 +52,7 @@ h1 {
 .firstP {
     margin-top: 20px;
 }
+
 p {
     margin-top: 7px;
 }
@@ -26,7 +61,7 @@ h2 {
     line-height: 50px;
 }
 
-a{
+a {
     text-decoration: none;
     cursor: pointer;
     color: currentColor;
@@ -39,4 +74,8 @@ a:hover {
 
 .main ul {
     margin-left: 18px;
+}
+
+.main h1 {
+    padding: 19px;
 }
