@@ -7,7 +7,7 @@
 
 .site-headers {
     width: auto;
-    height: auto;
+    height: auto; 
     background: linear-gradient(57deg, #00c6a7, #1e4d92);
 }
 
@@ -24,6 +24,7 @@ nav {
 }
 
 .logo h1 {
+    font-size: 38px;
     line-height: 100px;
     padding-left: 15px;
 }
@@ -39,7 +40,7 @@ nav {
 }
 
 .main {
-    margin: 45px;
+    margin: 100px;
     box-shadow: grey 5px 5px 5px 5px;
 }
 
@@ -74,4 +75,10 @@ nav {
 a:hover {
     color: yellowgreen;
     transition: 0.2s color;
+}
+
+@media (max-width : 920px) {
+    .logo h1{
+        font-size: 17px;
+    }
 }
