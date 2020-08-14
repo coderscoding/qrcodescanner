@@ -5,18 +5,20 @@ permalink: /index.html
 <html lang="en">
 
 <head>
-	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-	<meta name="theme-color" content="#8cd67e">
-	<script data-ad-client="ca-pub-9642376022413315" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name=”robots” content="index, follow">
-	<meta name="title" content="Free QR Code Generator with customization">
-	<meta name="description" content="Let's Generate Free QR Code Scanner with logo, background-image, color and more custmization for free.">
-	<link rel="stylesheet" href="style.css">
-	<title>QR Code Generator</title>
-	<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#8cd67e">
+    <script data-ad-client="ca-pub-9642376022413315" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="index, follow">
+    <meta name="title" content="Free QR Code Generator with customization">
+    <meta name="description"
+        content="Let's Generate Free QR Code Scanner with logo, background-image, color and more custmization for free.">
+    <link rel="stylesheet" href="style.css">
+    <title>QR Code Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -340,16 +342,20 @@ permalink: /index.html
         <div class="menu">
             <ul>
                 <li>
-                    <a class="menuFOOTER"  href="/">Home</a>
+                    <a class="menuFOOTER" href="/">Home</a>
                 </li>
                 <li>
-                    <a  class="menuFOOTER" href="about.html">About Us</a>
+                    <a href="//sourcethical.in">QR Code Generator</a>
+                    <a href="//htmlencrypter.sourcethical.in">Free HTML Code Encrypter</a>
                 </li>
                 <li>
-                    <a  class="menuFOOTER"  href="contact.html">Contact Us</a>
+                    <a class="menuFOOTER" href="about.html">About Us</a>
                 </li>
                 <li>
-                    <a class="menuFOOTER"  href="privacy.html">Privacy Policy</a>
+                    <a class="menuFOOTER" href="contact.html">Contact Us</a>
+                </li>
+                <li>
+                    <a class="menuFOOTER" href="privacy.html">Privacy Policy</a>
                 </li>
             </ul>
         </div>
@@ -462,7 +468,8 @@ permalink: /index.html
         })
 
         // restore form
-        var skipEleName = "#logoBackgroundTransparent#autoColor#logo#backgroundImage#callback#quietZoneColorChk#";
+        var skipEleName =
+            "#logoBackgroundTransparent#autoColor#logo#backgroundImage#callback#quietZoneColorChk#";
         for (var eleName in params) {
             if (skipEleName.indexOf('#' + eleName + '#') == -1) {
                 $('#paramsForm [name="' + eleName + '"]').val(params[eleName])
@@ -567,7 +574,8 @@ permalink: /index.html
                 }
             }
 
-            userParam['logoBackgroundTransparent'] = $('#paramsForm [name="logoBackgroundTransparent"]').prop('checked');
+            userParam['logoBackgroundTransparent'] = $('#paramsForm [name="logoBackgroundTransparent"]')
+                .prop('checked');
             userParam['autoColor'] = $('#paramsForm [name="autoColor"]').prop('checked');
 
             console.log($('#paramsForm [name="quietZoneColorChk"]').prop('checked'));
@@ -581,7 +589,10 @@ permalink: /index.html
             var newparams = {};
             $.extend(newparams, params, userParam)
 
-            parseParamsToFloat(newparams, ["width", "height", "typeNumber", "correctLevel", "titleHeight", "titleTop", "subTitleTop", "logoWidth", "logoHeight", "backgroundImageAlpha", "dotScale", "quietZone"])
+            parseParamsToFloat(newparams, ["width", "height", "typeNumber", "correctLevel",
+                "titleHeight", "titleTop", "subTitleTop", "logoWidth", "logoHeight",
+                "backgroundImageAlpha", "dotScale", "quietZone"
+            ])
             // console.info(newparams)
 
             generator(newparams)
