@@ -68,7 +68,6 @@ nav {
 .menu ul,
 .menu ul li,
 .menu ul li a {
-    color: white;
     display: flex;
     justify-content: center;
 }
