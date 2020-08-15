@@ -44,7 +44,7 @@ nav {
     box-shadow: grey 5px 5px 5px 5px;
 }
 
-.footer {
+#footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,6 +68,7 @@ nav {
 .menu ul,
 .menu ul li,
 .menu ul li a {
+    color: white;
     display: flex;
     justify-content: center;
 }
@@ -83,8 +84,12 @@ a:hover {
     transition: 0.2s color;
 }
 
-@media (max-width : 920px) {
+@media (max-width : 500px) {
     .logo h1 {
         font-size: 17px;
+    }
+
+    .menuFOOTER{
+        font-size: 15px;
     }
 }
