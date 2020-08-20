@@ -98,3 +98,10 @@ a:hover {
         display: none;
     }
 }
+
+.contentTool{
+    border: 2px solid grey;
+    box-shadow: 5px 2px 5px 2px grey;
+    margin: 56px;
+    padding: 15px;
+}
