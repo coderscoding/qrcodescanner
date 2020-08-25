@@ -30,14 +30,13 @@ html  {
 }
 
 .menu ul li a {
-    line-height: 80px;
+    line-height: 15px;
     cursor: pointer;
     text-decoration: none;
 }
 
 
 .menu ul li a:hover {
-
     border-radius: 5px;
     color: greenyellow;
     transition: color 0.2s;
@@ -54,7 +53,6 @@ ul {
 
 
 .menu {
-    width: 600px;
     display: block;
     margin: auto;
 }
@@ -88,4 +86,14 @@ a:hover {
 
 .main h1 {
     padding: 19px;
+}
+
+.footer {
+    overflow: hidden;
+}
+
+@media only screen and (max-width : 346px){
+    .menu ul li a {
+        font-size: 14px;
+    }
 }

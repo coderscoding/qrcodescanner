@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-	<link rel="icon" href="favicon.ico" type="image/x-icon" />
-	<meta name="theme-color" content="#8cd67e">
-	<script data-ad-client="ca-pub-9642376022413315" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#8cd67e">
+    <script data-ad-client="ca-pub-9642376022413315" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About US</title>
@@ -21,52 +22,72 @@
         </nav>
     </header>
     <style>
-        .menu ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .menu {
-            background-color: black;
-            width: 100%;
-        }
-
-        .menu ul {
-            list-style: none;
-            float: right;
-        }
-
-        .menu ul li {
-            float: right;
-            padding-left: 1.3rem;
-            padding-right: 1.3em;
-        }
-
-        .menu ul li a {
-            line-height: 80px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-
-        .menu ul li a:hover {
-
-            border-radius: 5px;
-            color: greenyellow;
-            transition: color 0.2s;
-        }
-
         .mainB {
             margin: 45px;
             box-shadow: gray 5px 5px 5px 5px;
         }
 
-        h3, p, div {
+        h3,
+        p,
+        div {
             padding: 9px;
+        }
+
+        footer ul li {
+            list-style: none;
+        }
+
+        footer ul li a,
+        footer p a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            height: 4rem;
+            padding: 5px;
+            background-color: black;
+        }
+
+        footer ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer ul li {
+            color: white;
+            padding: 1px;
+        }
+
+        footer ul li a {
+            padding: 3px;
+            font-size: 15px;
+        }
+
+        footer p {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        @media only screen and (min-width: 320px) {
+            .navbar {
+                line-height: 50px;
+            }
+
+            .heading h1 {
+                font-size: 18px;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
         }
     </style>
 
-    
+
     <div class="mainB">
 
         <h3>Welcome to Free QR Code Generator, your number one source for Free QR Code Generator. We're dedicated to
@@ -76,8 +97,10 @@
         </h3>
 
 
-        <p>Founded in 2020 by <a href="https://sourcethical.in">sourcethical.in</a>, Free QR Code Generator has come a long way from its beginnings in
-            WORLD. When <a href="https://sourcethical.in">sourcethical.in</a> first started out, his passion for friendly Services.
+        <p>Founded in 2020 by <a href="https://sourcethical.in">sourcethical.in</a>, Free QR Code Generator has come a
+            long way from its beginnings in
+            WORLD. When <a href="https://sourcethical.in">sourcethical.in</a> first started out, his passion for
+            friendly Services.
             drove them to start their own business.</p>
 
 
@@ -93,39 +116,30 @@
     </div>
 
     <style>
-        @media screen and (max-width: 500px){
-            .menuFOOTER{
+        @media screen and (max-width: 500px) {
+            .menuFOOTER {
                 font-size: 15px;
             }
         }
     </style>
-    <div class="footerLAST" id="footer">
-        <div class="menu">
-            <ul>
-                <li>
-                    <a class="menuFOOTER" href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="//sourcethical.in">QR Code Generator</a>
-                    <a href="//htmlencrypter.sourcethical.in">Free HTML Code Encrypter</a>
-                </li>
-                <li>
-                    <a class="menuFOOTER"  href="about.html">About Us</a>
-                </li>
-                <li>
-                    <a class="menuFOOTER"  href="contact.html">Contact Us</a>
-                </li>
-                <li>
-                    <a class="menuFOOTER"  href="privacy.html">Privacy Policy</a>
-                </li>
-                <!-- <li>
-                        <a href="terms.html">Terms of Use</a>
-                    </li> -->
+    <footer>
+        <ul>
+            <li>
+                <a href="/">Home</a>|
+            </li>
+            <li>
+                <a target="__blank" href="//sourcethical.in/about.html">About Us</a>|
+            </li>
+            <li>
+                <a target="__blank" href="//sourcethical.in/contact.html">Contact Us</a>|
+            </li>
+            <li>
+                <a href="//sourcethical.in/privacy.html">Privacy Policy</a>
+            </li>
+        </ul>
+        <p>Copyright &#169;<a href="//sourcethical.in">&#160;sourcethical.in&#160;</a>2020. All Rigths Reserved.</p>
 
-            </ul>
-        </div>
-    </div>
-
+    </footer>
 </body>
 
 </html>
